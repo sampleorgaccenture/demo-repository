@@ -170,7 +170,8 @@ SendInvite()
 
   Debug "${INVITE_RESPONSE}"
 
-  if [[ "$INVITE_RESPONSE_CODE" != "200" ]]; then
+# Organization invitation API returns 201 if the user is invited  
+  if [[ "$INVITE_RESPONSE_CODE" != "200" && "$INVITE_RESPONSE_CODE" != "201" ]]; then
     echo "ERROR --- Received error response code while inviting user: $USER"
     echo "${INVITE_RESPONSE_BODY}" | jq '.'
     ERROR_COUNT=$((ERROR_COUNT+1))

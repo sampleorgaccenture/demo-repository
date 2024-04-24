@@ -27,7 +27,8 @@ user5.email@company.com,member
 - Make the file executable
   - `chmod +x invite-users-to-org.sh`
 - Execute the file
-  - `./invite-users-to-org.sh`
+  - `./invite-users-to-org.sh` (if the .csv file contains all the login-ids)
+  - `./invite-users-to-org.sh --email` (if the .csv file contains all the user emails)
 - Provide the script with information when prompted
 - **Example** Run below:
 
